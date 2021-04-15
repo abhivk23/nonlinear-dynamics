@@ -34,3 +34,14 @@ def logistic_map(c, x_0, n=1000):
     x.append(x_0)
     abs_error.append(abs(attractor-x_0))
     return x, abs_error
+
+def modulo_map(x_0, n=1000):
+    """
+    Map defined by x_n+1= 2*x_n mod 1.
+    """
+    x = [0] * n
+    x[0] = x_0
+    for i in range(1,n-1):
+        x_0 = 2.*x_0 % 1
+        x[i] = x_0
+    return x
